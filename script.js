@@ -19,10 +19,10 @@ let countdown;
 //Questions and Options---
 const quizArray = [
     {
-        id: "0",
-        question: "Which is the most widely spoken language in the world?",
-        options: ["Spanish", "Mandarin", "English", "German"],
-        correct: "Mandarin",
+        id: "01",
+        question: "What is 5 + 3?",
+        options: ["10", "32", "8", "9"],
+        correct: "8",
     },
     {
         id: "1",
@@ -87,25 +87,31 @@ restart.addEventListener("click", () => {
 });
 
 //Next Button
+//Next Button
 nextBtn.addEventListener(
     "click",
     (displayNext = () => {
-        //increment questionCount
+        // Increment questionCount after the user clicks Next
         questionCount += 1;
-        //if last question
-        if (questionCount == quizArray.length) {
-            //hide question container and display score
+
+        // If last question
+        if (questionCount === quizArray.length) {
+            // Hide the question container and display score
             displayContainer.classList.add("hide");
             scoreContainer.classList.remove("hide");
-            //user score
+
+            // Display the user's score
             userScore.innerHTML =
-                "Your score is " + scoreCount + " out of " + questionCount;
+                "Your score is " + scoreCount + " out of " + quizArray.length;
         } else {
-            //display questionCount
+            // Display the question number correctly (1-based index)
             countOfQuestion.innerHTML =
-                questionCount + 1 + " of " + quizArray.length + " Question";
-            //display quiz
+                (questionCount + 1) + " of " + quizArray.length + " Question";
+
+            // Display the next question
             quizDisplay(questionCount);
+
+            // Reset the timer for the next question
             count = 11;
             clearInterval(countdown);
             timerDisplay();
@@ -165,34 +171,38 @@ function quizCreator() {
     }
 }
 
-//Checker Function to check if option is correct or not
+//Checker Function to highlight the selected option
 function checker(userOption) {
-    let userSolution = userOption.innerText;
     let question =
         document.getElementsByClassName("container-mid")[questionCount];
     let options = question.querySelectorAll(".option-div");
 
-    //if user clicked answer == correct option stored in object
-    if (userSolution === quizArray[questionCount].correct) {
-        userOption.classList.add("correct");
-        scoreCount++;
-    } else {
-        userOption.classList.add("incorrect");
-        //For marking the correct option
-        options.forEach((element) => {
-            if (element.innerText == quizArray[questionCount].correct) {
-                element.classList.add("correct");
-            }
-        });
-    }
+    // Get the correct answer for the current question
+    let correctAnswer = quizArray[questionCount].correct;
 
-    //clear interval(stop timer)
-    clearInterval(countdown);
-    //disable all options
+    // Remove highlight from all options
+    options.forEach((element) => {
+        element.classList.remove("selected"); // Remove any existing selection
+    });
+
+    // Highlight the selected option
+    userOption.classList.add("selected");
+
+    // Disable all options to prevent further selection
     options.forEach((element) => {
         element.disabled = true;
     });
+
+    // Check if the selected option is correct
+    if (userOption.innerText === correctAnswer) {
+        scoreCount++; // Increment score if answer is correct
+    }
+
+    // Clear interval (stop timer)
+    clearInterval(countdown);
 }
+
+
 
 //initial setup
 function initial() {
