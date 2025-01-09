@@ -1,0 +1,115 @@
+
+body {
+    background-color: #03051be8; /* Background color */
+    font-family: Arial, sans-serif; /* Font style */
+    height: 100vh; /* Full height */
+    margin: 0; /* Remove default margin */
+}
+.nav-bar {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    min-height: 60px;
+}
+
+.nav-bar .logo {
+    font-size: 2rem;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white; /* Ensure the logo link is white */
+}
+
+.nav-bar ul {
+    list-style-type: none; 
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white; /* Set nav links to white */
+    transition: color 0.3s ease, transform 0.2s ease; /* Smooth hover transition */
+}
+
+.nav-bar ul li a:hover {
+    color: #00bcd4; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the link on hover */
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.primary-btn {
+    background-color: #007bff; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 1.2rem; 
+    text-decoration: none; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
+.hamburger {
+    display: none;
+}
+
+.wraper {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; /* Full height to center vertically */
+    margin: 0; /* Remove extra margins */
+}
+
+
+.login-container {
+    background-color: white; /* Container background color */
+    padding: 40px 30px; 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    width: 300px; /* Fixed width */
+    text-align: center; /* Center text */
+}
+
+h2 {
+    margin-bottom: 20px; 
+    color: #333; 
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%; 
+    padding: 10px; 
+    margin: 10px 0; /* Space above and below inputs */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+button {
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px; /* Padding inside button */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width */
+    font-size: 16px; /* Font size */
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

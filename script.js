@@ -9,6 +9,8 @@ let restart = document.getElementById("restart");
 let userScore = document.getElementById("user-score");
 let startScreen = document.querySelector(".start-screen");
 let startButton = document.getElementById("start-button");
+let backButton = document.getElementById("back-button");
+
 let questionCount;
 let scoreCount = 0;
 let count = 11;
@@ -210,6 +212,11 @@ startButton.addEventListener("click", () => {
     displayContainer.classList.remove("hide");
     initial();
 });
+
+backButton.addEventListener("click", () => {
+    window.location.href = "index.html"; 
+});
+
 
 //hide quiz and display start screen
 window.onload = () => {

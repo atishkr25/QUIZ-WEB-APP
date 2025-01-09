@@ -1,41 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
- 
-    <link rel="stylesheet" href="style.css">
-
-    <title>Quiz App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="css/style2.css">
+    
 </head>
-
 <body>
-    <!-- Further code here -->
-    <div class="start-screen">
-      <button id="start-button">Start</button>
-    </div>
-  <div id="display-container">
-      <div class="header">
-          <div class="number-of-count">
-              <span class="number-of-question">1 of 10 questions</span>
-          </div>
-          <!-- <div class="timer-div">
-              <img src="https://uxwing.com/wp-content/themes/uxwing/download/time-and-date/stopwatch-icon.png"
-                  width="20px" />
-              <span class="time-left">10s</span>
-          </div> -->
-      </div>
-      <div id="container">
-          <!-- questions and options will be displayed here -->
-      </div>
-      <button id="next-button">Next</button>
-  </div>
-  <div class="score-container hide">
-      <div id="user-score">Demo Score</div>
-      <button id="restart">Restart</button>
-  </div>
 
+    <nav class="nav-bar">
+        <div class="logo">
+            <a class="nav-links" href="#">Quiz</a>
+        </div>
+  
+        <ul class="nav-menu">
+          <li><a class="nav-links" href="#home">Home</a></li>
+          <li><a class="nav-links" href="#about">About Us</a></li>
+          <li><a class="nav-links" href="#events">Leaderboard</a></li>
+          <li><a class="nav-links primary-btn" href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          
+        </div>
+    </nav>
 
-    <script src="script.js"></script>
+      <div class="wraper">
+        <div class="login-container">
+            <h2>Login/Register</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Enter your name" required>
+                <input type="text" id="rollnum" placeholder="Enter your roll number" required>
+                <button type="submit">Login To Start</button>
+            </form>
+        </div>
+      </div>  
+
+    <script>
+        const form = document.getElementById('login-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const rollnum = document.getElementById('rollnum').value;
+
+            // Store data in localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('rollnum', rollnum);
+
+            // Redirect to quiz page
+            window.location.href = 'quiz.html';
+        });
+    </script>
 </body>
-
 </html>
