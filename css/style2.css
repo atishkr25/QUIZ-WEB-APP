@@ -12,6 +12,11 @@ body {
     align-items: center;
     color: white;
     min-height: 60px;
+    background-color: rgb(174, 0, 255);
+    margin: 0;
+    /* margin: 20px 50px;
+    border-radius: 10px; */
+
 }
 
 .nav-bar .logo {
@@ -45,7 +50,7 @@ body {
     gap: 20px;
 }
 .primary-btn {
-    background-color: #007bff; 
+    background-color: #1c271d; 
     color: white; 
     padding: 10px 20px; 
     border: none; 
@@ -56,7 +61,7 @@ body {
 }
 
 .primary-btn:hover {
-    background-color: #0056b3;
+    background-color: #353a3f;
     transform: scale(1.05);
 }
 
