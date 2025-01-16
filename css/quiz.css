@@ -16,21 +16,21 @@
   .start-screen {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center; 
+    align-items: center;
     text-align: center;
     padding: 40px 30px; 
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    width: auto; /* Content-based width */
-    max-width: 90%; /* Prevent overflow on small screens */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    width: auto; 
+    max-width: 90%; 
   }
   
   .start-screen h2 {
     font-size: 1.8rem;
     margin-bottom: 15px;
-    color: #333; /* Darker color for heading */
+    color: #333; 
   }
   
   .start-screen ul {
@@ -44,21 +44,21 @@
   .button-group {
     display: flex;
     justify-content: space-between;
-    width: 100%; /* Buttons aligned properly */
+    width: 100%; 
     gap: 10px;
   }
   
   #back-button,
   #start-button, #restart, #Leaderboard-btn {
-    background-color: #007bff; /* Blue background */
-    color: white; /* White text */
+    background-color: #007bff;
+    color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 45%; /* Equal button width */
+    width: 45%; 
   }
   
   #restart, #Leaderboard-btn{
@@ -67,7 +67,7 @@
   }
   #back-button:hover,
   #start-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
   }
   
 
@@ -144,7 +144,6 @@
   display: none;
 }
 
-/* Add border to the selected option */
 .option-div.selected {
   border: 2px solid #007bff; 
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); 

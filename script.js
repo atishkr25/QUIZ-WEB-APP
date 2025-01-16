@@ -1,4 +1,4 @@
-//References
+
 let timeLeft = document.querySelector(".time-left");
 let quizContainer = document.getElementById("container");
 let nextBtn = document.getElementById("next-button");
@@ -87,16 +87,13 @@ restart.addEventListener("click", () => {
 });
 
 //Next Button
-//Next Button
 nextBtn.addEventListener(
     "click",
     (displayNext = () => {
         // Increment questionCount after the user clicks Next
         questionCount += 1;
 
-        // If last question
         if (questionCount === quizArray.length) {
-            // Hide the question container and display score
             displayContainer.classList.add("hide");
             scoreContainer.classList.remove("hide");
 
@@ -104,14 +101,13 @@ nextBtn.addEventListener(
             userScore.innerHTML =
                 "Your score is " + scoreCount + " out of " + quizArray.length;
         } else {
-            // Display the question number correctly (1-based index)
             countOfQuestion.innerHTML =
                 (questionCount + 1) + " of " + quizArray.length + " Question";
 
             // Display the next question
             quizDisplay(questionCount);
 
-            // Reset the timer for the next question
+            // time resetinggggggggg
             count = 11;
             clearInterval(countdown);
             timerDisplay();
@@ -131,29 +127,22 @@ const timerDisplay = () => {
     }, 1000);
 };
 
-//Display quiz
 const quizDisplay = (questionCount) => {
     let quizCards = document.querySelectorAll(".container-mid");
-    //Hide other cards
     quizCards.forEach((card) => {
         card.classList.add("hide");
     });
-    //display current question card
+
     quizCards[questionCount].classList.remove("hide");
 };
 
 //Quiz Creation
 function quizCreator() {
-    //randomly sort questions
     quizArray.sort(() => Math.random() - 0.5);
-    //generate quiz
     for (let i of quizArray) {
-        //randomly sort options
         i.options.sort(() => Math.random() - 0.5);
-        //quiz card creation
         let div = document.createElement("div");
         div.classList.add("container-mid", "hide");
-        //question number
         countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question";
         //question
         let question_DIV = document.createElement("p");
@@ -177,25 +166,21 @@ function checker(userOption) {
         document.getElementsByClassName("container-mid")[questionCount];
     let options = question.querySelectorAll(".option-div");
 
-    // Get the correct answer for the current question
     let correctAnswer = quizArray[questionCount].correct;
 
-    // Remove highlight from all options
     options.forEach((element) => {
-        element.classList.remove("selected"); // Remove any existing selection
+        element.classList.remove("selected"); 
     });
 
-    // Highlight the selected option
     userOption.classList.add("selected");
 
-    // Disable all options to prevent further selection
+  
     options.forEach((element) => {
         element.disabled = true;
     });
 
-    // Check if the selected option is correct
     if (userOption.innerText === correctAnswer) {
-        scoreCount++; // Increment score if answer is correct
+        scoreCount++; 
     }
 
     // Clear interval (stop timer)

@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Register</title>
+    <title>Quizzy</title>
     <link rel="stylesheet" href="css/style2.css">
     
 </head>
 <body>
-
+  <section id="home">
     <nav class="nav-bar">
         <div class="logo">
             <a class="nav-links" href="#">Quizzy</a>
         </div>
   
         <ul class="nav-menu">
-          <li><a class="nav-links" href="#home">Home</a></li>
-          <li><a class="nav-links" href="#about">About Us</a></li>
-          <li><a class="nav-links" href="#events">Leaderboard</a></li>
+          <li><a class="nav-links" href="index.html">Home</a></li>
+          <li><a class="nav-links" href="about.html">About Us</a></li>
+          <li><a class="nav-links" href="leaderboard.html">Leaderboard</a></li>
           <li><a class="nav-links primary-btn" href="#contact">Contact Us</a></li>
         </ul>
         <div class="hamburger">
@@ -30,30 +30,30 @@
 
       <div class="wraper">
         <div class="login-container">
-            <h2>Login/Register</h2>
+            <h2>Enter Your Details</h2>
             <form id="login-form">
                 <input type="text" id="username" placeholder="Enter your name" required>
                 <input type="text" id="rollnum" placeholder="Enter your roll number" required>
-                <button type="submit">Login To Start</button>
+                <button type="submit">Continue</button>
             </form>
         </div>
       </div>  
-
+    </section>
     <script>
-        const form = document.getElementById('login-form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+    const form = document.getElementById('login-form');
+      form.addEventListener('submit', (e) => {
+          e.preventDefault();
 
-            const username = document.getElementById('username').value;
-            const rollnum = document.getElementById('rollnum').value;
+      const username = document.getElementById('username').value;
+      const rollnum = document.getElementById('rollnum').value;
 
-            // Store data in localStorage
-            localStorage.setItem('username', username);
-            localStorage.setItem('rollnum', rollnum);
+      localStorage.setItem('currentUserName', username);
+      localStorage.setItem('currentUserRollNumber', rollnum);
 
-            // Redirect to quiz page
-            window.location.href = 'quiz.html';
-        });
+      window.location.href = 'quiz.html';
+
+    });
+
     </script>
 </body>
 </html>
