@@ -1,0 +1,173 @@
+/* css/style.css */
+body {
+    background-color: #03051be8; 
+    font-family: Arial, sans-serif; 
+    height: 100vh; 
+    margin: 0; 
+}
+.nav-bar {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    min-height: 60px;
+    background-color: rgb(174, 0, 255);
+    margin: 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu li a:hover {
+    color: #00bcd4;
+    transform: scale(1.1);
+}
+
+.primary-btn {
+    background-color: #1c271d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.primary-btn:hover {
+    background-color: #353a3f;
+    transform: scale(1.05);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(174, 0, 255);
+        position: absolute;
+        top: 36px;
+        right: 0;
+        width: 100%;
+        height: 25%;
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+.contact-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.contact-box {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-box h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: #555555;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px 2px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 98%;
+    /* transition: border-color 0.3s ease; */
+}
+
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+    .contact-box {
+        padding: 1.5rem;
+    }
+
+    .contact-box h2 {
+        font-size: 1.5rem;
+    }
+}
