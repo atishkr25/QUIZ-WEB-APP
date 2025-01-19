@@ -1,10 +1,11 @@
 
 body {
-    background-color: #03051be8; 
-    font-family: Arial, sans-serif; 
-    height: 100vh; 
-    margin: 0; 
+    background-color: #03051be8;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
 }
+
 .nav-bar {
     display: flex;
     margin-top: 5px;
@@ -14,50 +15,43 @@ body {
     min-height: 60px;
     background-color: rgb(174, 0, 255);
     margin: 0;
-    /* margin: 20px 50px;
-    border-radius: 10px; */
-
 }
 
-.nav-bar .logo {
-    font-size: 2rem;
+.logo {
+    font-size: 1.8rem;
 }
 
 .logo a {
     text-decoration: none;
-    color: white; /* Ensure the logo link is white */
-}
-
-.nav-bar ul {
-    list-style-type: none; 
-}
-
-.nav-bar ul li a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: white; 
-    transition: color 0.3s ease, transform 0.2s ease; 
-}
-
-.nav-bar ul li a:hover {
-    color: #00bcd4;
-    transform: scale(1.1);
+    color: white;
 }
 
 .nav-menu {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    list-style-type: none;
 }
+
+.nav-menu li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu li a:hover {
+    color: #00bcd4;
+    transform: scale(1.1);
+}
+
 .primary-btn {
-    background-color: #1c271d; 
-    color: white; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 5px; 
-    font-size: 1.2rem; 
-    text-decoration: none; 
-    transition: background-color 0.3s ease, transform 0.2s ease; 
+    background-color: #1c271d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 .primary-btn:hover {
@@ -65,61 +59,85 @@ body {
     transform: scale(1.05);
 }
 
-
 .hamburger {
     display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
 }
 
-.wraper {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    margin: 0; 
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); 
+    padding: 20px; 
 }
 
 
 .login-container {
-    background-color: white; 
-    padding: 40px 30px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    width: 350px; 
-    text-align: center; 
-}
-.login-form{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
 }
 
 h2 {
-    margin-bottom: 20px; 
-    color: #333; 
+    margin-bottom: 20px;
+    color: #333;
 }
 
-input[type="text"],
-input[type="email"] {
-    width: 100%; 
-    padding: 10px; 
-    margin: 10px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 button {
-    background-color: #007bff; 
-    color: white; 
-    padding: 10px; 
-    border: none; 
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
     border-radius: 4px;
-    cursor: pointer; 
-    width: 100%; 
-    font-size: 16px; 
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
     margin-top: 10px;
 }
 
 button:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(174, 0, 255);
+        position: absolute;
+        top: 36px;
+        right: 0;
+        width: 100%;
+        height: 25%;
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
 }

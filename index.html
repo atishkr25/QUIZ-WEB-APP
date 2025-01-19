@@ -8,51 +8,63 @@
     
 </head>
 <body>
-  <section id="home">
-    <nav class="nav-bar">
-        <div class="logo">
-            <a class="nav-links" href="#">Quizzy</a>
-        </div>
-  
-        <ul class="nav-menu">
-          <li><a class="nav-links" href="index.html">Home</a></li>
-          <li><a class="nav-links" href="about.html">About Us</a></li>
-          <li><a class="nav-links" href="leaderboard.html">Leaderboard</a></li>
-          <li><a class="nav-links primary-btn" href="#contact">Contact Us</a></li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-          
-        </div>
-    </nav>
+    <section id="home">
+      <nav class="nav-bar">
+          <div class="logo">
+              <a class="nav-links" href="#">Quizzy</a>
+          </div>
 
-      <div class="wraper">
-        <div class="login-container">
-            <h2>Enter Your Details</h2>
-            <form id="login-form">
-                <input type="text" id="username" placeholder="Enter your name" required>
-                <input type="text" id="rollnum" placeholder="Enter your roll number" required>
-                <button type="submit">Continue</button>
-            </form>
-        </div>
-      </div>  
+          <ul class="nav-menu">
+              <li><a class="nav-links" href="index.html">Home</a></li>
+              <li><a class="nav-links" href="about.html">About Us</a></li>
+              <li><a class="nav-links" href="leaderboard.html">Leaderboard</a></li>
+              <li><a class="nav-links primary-btn" href="contact.html">Contact Us</a></li>
+          </ul>
+          <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+      </nav>
+
+      <div class="wrapper">
+          <div class="login-container">
+              <h2>Enter Your Details</h2>
+              <form id="login-form">
+                  <input type="text" id="username" placeholder="Enter your name" required>
+                  <input type="text" id="rollnum" placeholder="Enter your roll number" required>
+                  <button type="submit">Continue</button>
+              </form>
+          </div>
+      </div>
     </section>
+
     <script>
-    const form = document.getElementById('login-form');
-      form.addEventListener('submit', (e) => {
-          e.preventDefault();
+        const form = document.getElementById('login-form');
+          form.addEventListener('submit', (e) => {
+              e.preventDefault();
 
-      const username = document.getElementById('username').value;
-      const rollnum = document.getElementById('rollnum').value;
+          const username = document.getElementById('username').value;
+          const rollnum = document.getElementById('rollnum').value;
 
-      localStorage.setItem('currentUserName', username);
-      localStorage.setItem('currentUserRollNumber', rollnum);
+          localStorage.setItem('currentUserName', username);
+          localStorage.setItem('currentUserRollNumber', rollnum);
 
-      window.location.href = 'quiz.html';
+          window.location.href = 'quiz.html';
 
-    });
+        });
+        
+
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        } else {
+            console.error("Hamburger or nav-menu element not found.");
+        }
 
     </script>
 </body>
